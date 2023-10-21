@@ -15,7 +15,8 @@ class collisionChecker {
         // const cameraPosition = this.camera.position;
         const distanceThreshold = 0.3;
 
-    const moveSpeed = 0.4;
+        // Speed might jump the distanceThreshold ** CAUTION **
+        const moveSpeed = 0.4;
         // Iterate over all walls and find the closest one
         // for (const wall of this.segments) {
         // const wallPosition = wall.position;
