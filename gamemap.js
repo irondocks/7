@@ -53,11 +53,11 @@ class GameMap {
     const url = new THREE.TextureLoader().load('./leafwall.webp');
     this.wallOptions = [
       { size: [50, 2.5, 1], wrapS: 2, wrapT: 120, texture: url, yAxis: 0, positions: [0, -1, -5], segments: [1, 1, 1] },
-      { size: [15, 2.5, 20], color: 0xdfffbf, yAxis: 0, positions: [-25, 0, 5], segments: [1, 1, 1] },
+      { size: [30, 2.5, 20], color: 0xd00fbf, yAxis: 0, positions: [-25, 0, 5], segments: [1, 1, 1] },
       { size: [50, 2.5, 1], color: 0xafaeec, yAxis: 0, positions: [0, -1, 5], segments: [1, 1, 1] },
       { size: [15, 2.5, 20], color: 0xafaeec, yAxis: 0, positions: [25, 0, -5], segments: [1, 1, 1] },
       { size: [100, 2, 30], color: 0x00f300, yAxis: -4, positions: [-75, -1, -5], segments: [1, 1, 1] },
-      { size: [100, 2, 20], color: 0x0000af, yAxis: 3.5, positions: [-100, 2.5, -5], segments: [1, 1, 1] }
+      { size: [100, 2, 20], color: 0x0fffaf, yAxis: 3.5, positions: [-100, 2.5, -5], segments: [1, 1, 1] }
     ];
     this.segments = new Walls(this.wallOptions);
     this.animate();
@@ -179,8 +179,7 @@ class GameMap {
     this.camera.rotateZ(this.cameraRotationZ);
     // this.protonic.setTransformedPosition(this.cameraRotationX, this.cameraRotationY, this.cameraRotationZ);
 
-    const delta = this.hid.clock.getDelta();
-    this.hid.update(delta);
+    
     this.segments.forEach(f => this.scene.add(f));
     
     new collisionChecker(this.scene, this.camera, this.segments, this.hid);
